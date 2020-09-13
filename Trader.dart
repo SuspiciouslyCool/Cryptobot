@@ -72,12 +72,13 @@ class LevelUpTrader extends Trader {
 			if(price.price<this.average&&!held) {
 				held=buy(price);
 				buyPrice=price;
-		  	}
+			}
 			if(held&&price.price>=buyPrice.price+(this.profitPercentage*buyPrice.price)) {
 				sell(price);
 				held=false;
 			}
-			sleep(Duration(seconds: 30));
+			await Future.delayed(Duration(seconds: 10));
+			// sleep(Duration(seconds: 10));
 		}
 	}
 

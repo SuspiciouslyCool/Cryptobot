@@ -10,7 +10,7 @@ Future main() async {
   print('Listening on localhost:${server.port}');
 
 	Cryptocurrency cryptocurrency = new Cryptocurrency("bitcoin","btc","Bitcoin");
-	Trader trader = LevelUpTrader(cryptocurrency,10,.01,.5);
+	LevelUpTrader trader = LevelUpTrader(cryptocurrency,10,.01,.5);
 
   await for (HttpRequest request in server) {
 	print("Request");
