@@ -5,8 +5,8 @@ import 'Trader.dart';
 
 Future main() async {
   	var server = await HttpServer.bind(
-		InternetAddress.loopbackIPv4,
-		4040,
+		"0.0.0.0",
+		8080,
   	);
   	print('Listening on localhost:${server.port}');
 
